@@ -1,8 +1,13 @@
 function sandbox {
+  mkdir -p ~/Projects/sandbox;
   cd ~/Projects/sandbox;
-  git clone $1;
+  hub clone $1;
   clf;
   mate .;
+}
+
+function clean_sandbox {
+  rm -rf ~/Projects/sandbox/
 }
 
 function clf() {
@@ -27,4 +32,11 @@ function tcle() {
   mate_last;
 }
 
+#function git(){hub "$@"}
+
+
 alias sb='sandbox'
+alias csb='clean_sandbox'
+alias top='htop'
+alias ports='sudo lsof -iTCP -sTCP:LISTEN -P'
+alias bxr='bundle exec rake'
