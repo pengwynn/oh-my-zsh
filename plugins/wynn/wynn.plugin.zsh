@@ -15,21 +15,21 @@ function clf() {
   cd ${fol}
 }
 
-function mate_last() {
+function edit_last() {
   item=$(ls -t | head -1);
-  mate ${item};
+  vim ${item};
 }
 
 function tclr() {
   cd ~/Blogs/thechangelog;
   thor tumblr:post:repo $1;
-  mate_last;
+  edit_last;
 }
 
 function tcle() {
   cd ~/Blogs/thechangelog;
   thor tumblr:post:episode $1;
-  mate_last;
+  edit_last;
 }
 
 #function git(){hub "$@"}
